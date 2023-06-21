@@ -41,4 +41,5 @@ void fileError(char *name);
 void opcodeError(unsigned int line_number, char *opcode);
 void mallocError(void);
 void pushError(unsigned int line_number);
+void free_stack(stack_t **stack);
 #endif

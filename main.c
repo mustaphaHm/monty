@@ -42,6 +42,7 @@ int main(int argc, char **argv)
 		}
 		line_number++;
 	}
+	free_stack(&stack);
 	fclose(fptr);
 	return (0);
 }

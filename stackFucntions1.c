@@ -39,3 +39,20 @@ void pall(stack_t **stack)
 		temp = temp->next;
 	}
 }
+/**
+ * free_stack - free the stack
+ * @stack: the stack
+ * Return: nothing
+ */
+void free_stack(stack_t **stack)
+{
+	stack_t *st;
+
+	st = *stack;
+	while (st != NULL)
+	{
+		stack_t *temp = st;
+		st = st->next;
+		free(temp);
+	}
+}
