@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 			if (strcmp(opcode, "push") == 0)
 			{
 				if (argument == NULL)
-					opcodeError(line_number, opcode);
+					pushError(line_number);
 				push(&stack, atoi(argument));
 			}
 			else if (strcmp(opcode, "pall") == 0)

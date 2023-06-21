@@ -38,6 +38,7 @@ void push(stack_t **stack, int n);
 void pall(stack_t **stack);
 void usageError(void);
 void fileError(char *name);
-void opcodeError(int line_number, char *opcode);
+void opcodeError(unsigned int line_number, char *opcode);
 void mallocError(void);
+void pushError(unsigned int line_number);
 #endif

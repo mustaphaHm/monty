@@ -10,6 +10,16 @@ void usageError(void)
 	exit(EXIT_FAILURE);
 }
 /**
+ * pushError - if there is no arguments or type arg not an int
+ *
+ * Return: nothing
+ */
+void pushError(unsigned int line_number)
+{
+	fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
+	exit(EXIT_FAILURE);
+}
+/**
  * fileError - if cannot open file
  *@name: name of the file
  * Return: nothing
@@ -24,7 +34,7 @@ void fileError(char *name)
  * @opcode: the opcode
  * Return: nothing
  */
-void opcodeError(int line_number, char *opcode)
+void opcodeError(unsigned int line_number, char *opcode)
 {
 	fprintf(stderr, "L<%d>: unknown instruction %s\n", line_number, opcode);
 	exit(EXIT_FAILURE);
