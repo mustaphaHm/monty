@@ -1,4 +1,5 @@
 #include "monty.h"
+#define MAX_LINE_LENGTH 256
 /**
  * main - the entry point to my program
  * @argc: the number of arguments
