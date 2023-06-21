@@ -28,7 +28,7 @@ void push(stack_t **stack, unsigned int n)
  *@stack: pointer to the head of teh stack
  * Return: nothing
  */
-void pall(stack_t **stack, unsigned int n __attribute__((unused)))
+void pall(stack_t **stack)
 {
 	stack_t *temp;
 

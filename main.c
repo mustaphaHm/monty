@@ -14,8 +14,6 @@ int main(int argc, char **argv)
 	stack_t *stack = NULL;
 	char *opcode;
 	char *argument;
-	int i = 0;
-	instruction_t inst[] = INSTRUCTIONS;
 
 	if (argc != 2)
 		usageError();
@@ -29,16 +27,19 @@ int main(int argc, char **argv)
 		argument = strtok(NULL, " ");
 		if (opcode != NULL)
 		{
-			if (argument == NULL || !isdigit(argument[0]))
-				pushError(line_number);
-			while (inst[i].opcode != NULL)
+			if (strcmp(opcode, "push") == 0)
 			{
-				if (strcmp(inst[i].opcode, opcode) == 0)
-					inst[i].f(&stack, line_number);
-				else
-					opcodeError(line_number, opcode);
-				i++;
+				fflush(stdout);
+				if (argument == NULL || !isdigit(argument[0]))
+					pushError(line_number);
+				push(&stack, atoi(argument));
 			}
+			else if (strcmp(opcode, "pall") == 0)
+			{
+				pall(&stack);
+			}
+			else
+				opcodeError(line_number, opcode);
 		}
 		line_number++;
 	}

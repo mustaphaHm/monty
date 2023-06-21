@@ -6,14 +6,6 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-#define INSTRUCTIONS              \
-	{                           \
-		{"push", push},       \
-			{"pall", pall},   \
-		{                     \
-			NULL, NULL      \
-		}                     \
-	}
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -44,7 +36,7 @@ typedef struct instruction_s
 } instruction_t;
 
 void push(stack_t **stack, unsigned int n);
-void pall(stack_t **stack, unsigned int n);
+void pall(stack_t **stack);
 void usageError(void);
 void fileError(char *name);
 void opcodeError(unsigned int line_number, char *opcode);
