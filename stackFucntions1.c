@@ -5,7 +5,7 @@
  * @n: the data part of the node
  * Return: nothing
  */
-void push(stack_t **stack, int n)
+void push(stack_t **stack, unsigned int n)
 {
 	stack_t *newNode;
 
@@ -28,7 +28,7 @@ void push(stack_t **stack, int n)
  *@stack: pointer to the head of teh stack
  * Return: nothing
  */
-void pall(stack_t **stack)
+void pall(stack_t **stack, unsigned int n __attribute__((unused)))
 {
 	stack_t *temp;
 
