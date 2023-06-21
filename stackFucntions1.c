@@ -9,7 +9,7 @@ void push(stack_t **stack, int n)
 {
 	stack_t *newNode;
 
-	newNode = (stack_t*)malloc(sizeof(stack_t));
+	newNode = (stack_t *)malloc(sizeof(stack_t));
 	if (newNode == NULL)
 		mallocError();
 	newNode->n = n;
