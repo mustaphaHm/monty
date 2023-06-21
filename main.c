@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 {
 	FILE *fptr;
 	char line[MAX_LINE_LENGTH];
-	unsigned int line_number = 0;
+	unsigned int line_number = 1;
 	stack_t *stack = NULL;
 	char *opcode;
 	char *argument;
@@ -29,7 +29,8 @@ int main(int argc, char **argv)
 		{
 			if (strcmp(opcode, "push") == 0)
 			{
-				if (argument == NULL)
+				fflush(stdout);
+				if (argument == NULL || !isdigit(argument[0]))
 					pushError(line_number);
 				push(&stack, atoi(argument));
 			}

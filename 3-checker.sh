@@ -6,22 +6,25 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 # monty bytcode test case:
-montyBytes=""
+montyBytes="push 1
+pall
+push a"
 
 # make test case file:
 echo "$montyBytes" > testCase00
 
 # Run the program and capture its output
-program_output=$(./monty 2>&1)
+program_output=$(./monty testCase00 2>&1)
 
 # Specify the expected result
-expected_result="USAGE: monty file"
+expected_result="1
+L3: usage: push integer"
 
 # Compare the program's output with the expected result
 if [ "$program_output" == "$expected_result" ]; then
-    echo -e "${GREEN}Good${NC}"
+    echo -e "${GREEN}Mafanikio${NC}"
 else
-    echo -e "${RED}Fail${NC}"
+    echo -e "${RED}Kushindwa${NC}"
     echo "Got:
 $program_output
 expected:

@@ -16,7 +16,7 @@ void usageError(void)
  */
 void pushError(unsigned int line_number)
 {
-	fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
+	fprintf(stderr, "L%d: usage: push integer\n", line_number);
 	exit(EXIT_FAILURE);
 }
 /**
@@ -37,7 +37,7 @@ void fileError(char *name)
  */
 void opcodeError(unsigned int line_number, char *opcode)
 {
-	fprintf(stderr, "L<%d>: unknown instruction %s\n", line_number, opcode);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 	exit(EXIT_FAILURE);
 }
 /**
