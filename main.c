@@ -8,9 +8,7 @@
 int main(int argc, char **argv)
 {
 	FILE *fptr;
-	char *line = NULL;
-	size_t line_size = 0;
-	ssize_t read;
+	char line[MAX_LINE_LENGTH];
 	unsigned int line_number;
 	stack_t *stack = NULL;
 	char *opcode;
@@ -21,7 +19,7 @@ int main(int argc, char **argv)
 	fptr = fopen(argv[1], "r");
 	if (fptr == NULL)
 		fileError(argv[1]);
-	while ((read = getline(&line, &line_size, fptr)) != -1)
+	while (fgets(line, sizeof(line), fptr) != NULL)
 	{
 		line[strcspn(line, "\n")] = '\0';
 		opcode = strtok(line, " ");
@@ -44,7 +42,5 @@ int main(int argc, char **argv)
 		line_number++;
 	}
 	fclose(fptr);
-	if (line)
-		free(line);
 	return (0);
 }
