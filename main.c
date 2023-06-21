@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 {
 	FILE *fptr;
 	char line[MAX_LINE_LENGTH];
-	unsigned int line_number;
+	unsigned int line_number = 0;
 	stack_t *stack = NULL;
 	char *opcode;
 	char *argument;
