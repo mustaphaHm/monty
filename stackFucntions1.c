@@ -52,6 +52,7 @@ void free_stack(stack_t **stack)
 	while (st != NULL)
 	{
 		stack_t *temp = st;
+
 		st = st->next;
 		free(temp);
 	}

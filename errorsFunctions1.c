@@ -11,7 +11,7 @@ void usageError(void)
 }
 /**
  * pushError - if there is no arguments or type arg not an int
- *
+ *@line_number: the line number
  * Return: nothing
  */
 void pushError(unsigned int line_number)
@@ -31,6 +31,7 @@ void fileError(char *name)
 }
 /**
  * opcodeError - if the opcode is invalide
+ * @line_number: the line number
  * @opcode: the opcode
  * Return: nothing
  */
