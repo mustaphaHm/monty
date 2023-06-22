@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 		opcode = strtok(line, " ");
 		argument = strtok(NULL, " ");
 		fflush(stdout);
-		if (opcode != NULL)
+		if (opcode != NULL && *opcode != '\0')
 		{
 			void (*op_func)(stack_t **, unsigned int, char *);
 
@@ -35,6 +35,11 @@ int main(int argc, char **argv)
 				op_func(&stack, line_number, argument);
 			else
 				opcodeError(line_number, opcode);
+		}
+		else if (opcode == NULL)
+		{
+			line_number++;
+			continue;
 		}
 		else
 			opcodeError(line_number, opcode);
