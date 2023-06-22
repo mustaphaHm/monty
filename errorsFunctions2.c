@@ -29,3 +29,13 @@ void swap_error(unsigned int line_number)
 	fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 	exit(EXIT_FAILURE);
 }
+/**
+ * add_error - print err if stack < 2 elemnts
+ * @line_number: the line number
+ * Return: nothing
+ */
+void add_error(unsigned int line_number)
+{
+	fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+	exit(EXIT_FAILURE);
+}
