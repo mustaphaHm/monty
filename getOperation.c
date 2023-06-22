@@ -4,7 +4,7 @@
  * @s: char parameter
  * Return: int
  */
-void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number, char *n)
+void (*get_op_func(char *s))(stack_t **stack, unsigned int l, char *n)
 {
 	instruction_t ops[] = {
 		{"push", push},
