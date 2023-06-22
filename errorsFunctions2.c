@@ -10,6 +10,9 @@ void empty_stack(unsigned int line_number)
 	exit(EXIT_FAILURE);
 }
 /**
+ * pop_error - function that pop the top element
+ * @line_number: the line number
+ * Return: nothing
  */
 void pop_error(unsigned int line_number)
 {

@@ -18,7 +18,7 @@ void pint(stack_t **stack, unsigned int line_number, char *n)
 		empty_stack(line_number);
 }
 /**
- * pop _ function to remove top element from stack
+ * pop - function to remove top element from stack
  * @stack: pointer to pointer of the first elemnt of the stack
  * @line_number: the line number
  * @n: data of teh node
