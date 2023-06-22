@@ -38,3 +38,29 @@ void pop(stack_t **stack, unsigned int line_number, char *n)
 	else
 		pop_error(line_number);
 }
+/**
+ * swap - function that swaps the top two elements
+ * @stack: pointer to pointer of the first elemnt of the stack
+ * @line_number: the line number
+ * @n: data of teh node
+ * Return: nothing
+ */
+void swap(stack_t **stack, unsigned int line_number, char *n)
+{
+	stack_t *top, *next;
+	int temp;
+	(void) line_number;
+	(void) n;
+
+	if (*stack != NULL && (*stack)->next != NULL)
+	{
+		top = *stack;
+		next = (*stack)->next;
+
+		temp = top->n;
+		top->n = next->n;
+		next->n = temp;
+	}
+	else
+		swap_error(line_number);
+}

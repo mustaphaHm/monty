@@ -49,4 +49,6 @@ void pint(stack_t **stack, unsigned int line_number, char *n);
 void empty_stack(unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number, char *n);
 void pop_error(unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number, char *n);
+void swap_error(unsigned int line_number);
 #endif
