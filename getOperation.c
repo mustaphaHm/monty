@@ -10,6 +10,7 @@ void (*get_op_func(char *s))(stack_t **stack, unsigned int l, char *n)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL}
 	};
 	int i = 0;
