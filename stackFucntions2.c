@@ -91,3 +91,16 @@ void add(stack_t **stack, unsigned int line_number, char *n)
 	else
 		add_error(line_number);
 }
+/**
+ * nop - Do nothing
+ * @stack: pointer to pointer of the first elemnt of the stack
+ * @line_number: the line number
+ * @n: data of teh node
+ * Return: nothing
+ */
+void nop(stack_t **stack, unsigned int line_number, char *n)
+{
+	(void) stack;
+	(void) line_number;
+	(void) n;
+}
