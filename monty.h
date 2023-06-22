@@ -43,5 +43,6 @@ void opcodeError(unsigned int line_number, char *opcode);
 void mallocError(void);
 void pushError(unsigned int line_number);
 void free_stack(stack_t **stack);
-void (*get_op_func(char *s))(stack_t **stack, unsigned int line_number, char *n);
+void (*get_op_func(char *s))(stack_t **stack, unsigned int l, char *n);
+int isInteger(const char *str);
 #endif

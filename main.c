@@ -25,8 +25,17 @@ int main(int argc, char **argv)
 		line[strcspn(line, "\n")] = '\0';
 		opcode = strtok(line, " ");
 		argument = strtok(NULL, " ");
+		fflush(stdout);
 		if (opcode != NULL)
-			get_op_func(opcode)(&stack, line_number, argument);
+		{
+			void (*op_func)(stack_t **, unsigned int, char *);
+
+			op_func = get_op_func(opcode);
+			if (op_func != NULL)
+				op_func(&stack, line_number, argument);
+			else
+				opcodeError(line_number, opcode);
+		}
 		else
 			opcodeError(line_number, opcode);
 		line_number++;

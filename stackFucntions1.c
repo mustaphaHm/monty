@@ -9,14 +9,16 @@
 void push(stack_t **stack, unsigned int line_number, char *n)
 {
 	stack_t *newNode;
+	int num;
 	(void) line_number;
 
 	newNode = (stack_t *)malloc(sizeof(stack_t));
 	if (newNode == NULL)
 		mallocError();
-	if (n == NULL || !isdigit(*n))
+	if (n == NULL || !isInteger(n))
 		pushError(line_number);
-	newNode->n = atoi(n);
+	num = atoi(n);
+	newNode->n = num;
 	newNode->prev = NULL;
 
 	if (*stack != NULL)
@@ -64,4 +66,22 @@ void free_stack(stack_t **stack)
 		st = st->next;
 		free(temp);
 	}
+}
+/**
+ * isInteger - function that check if a string is int
+ * @str: the string
+ * Return: int
+ */
+int isInteger(const char *str)
+{
+	int i = 0;
+
+	if (str[0] == '-' || str[0] == '+')
+		i = 1;
+	for (; str[i] != '\0'; i++)
+	{
+		if (!isdigit(str[i]))
+			return (0);
+	}
+	return (1);
 }
