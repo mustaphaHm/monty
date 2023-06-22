@@ -26,21 +26,9 @@ int main(int argc, char **argv)
 		opcode = strtok(line, " ");
 		argument = strtok(NULL, " ");
 		if (opcode != NULL)
-		{
-			if (strcmp(opcode, "push") == 0)
-			{
-				fflush(stdout);
-				if (argument == NULL || !isdigit(argument[0]))
-					pushError(line_number);
-				push(&stack, atoi(argument));
-			}
-			else if (strcmp(opcode, "pall") == 0)
-			{
-				pall(&stack);
-			}
-			else
-				opcodeError(line_number, opcode);
-		}
+			get_op_func(opcode)(&stack, line_number, argument);
+		else
+			opcodeError(line_number, opcode);
 		line_number++;
 	}
 	free_stack(&stack);
