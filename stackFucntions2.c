@@ -18,5 +18,4 @@ void pint(stack_t **stack, unsigned int line_number, char *n)
 	{
 		empty_stack(line_number);
 	}
-	temp = temp->next;
 }
