@@ -56,4 +56,7 @@ void add_error(unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number, char *n);
 void sub(stack_t **stack, unsigned int line_number, char *n);
 void sub_error(unsigned int line_number);
+void _div(stack_t **stack, unsigned int line_number, char *n);
+void div_error_short(unsigned int line_number);
+void div_error_zero(unsigned int line_number);
 #endif
