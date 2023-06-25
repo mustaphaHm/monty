@@ -54,3 +54,29 @@ void _div(stack_t **stack, unsigned int line_number, char *n)
 	else
 		div_error_short(line_number);
 }
+/**
+ * mul - function that mult the scond top ele with the top of stack
+ * @stack: pointer to pointer of the first elemnt of the stack
+ * @line_number: the line number
+ * @n: data of teh node
+ */
+void mul(stack_t **stack, unsigned int line_number, char *n)
+{
+	stack_t *top, *next;
+	int mul;
+	(void) n;
+	
+	if (*stack != NULL && (*stack)->next != NULL)
+	{
+		top = *stack;
+		next = (*stack)->next;
+		mul = top->n * next->n;
+		
+		next->n = mul;
+		*stack = next;
+		next->prev = NULL;
+		free(top);
+	}
+	else
+		mul_error(line_number);
+}
