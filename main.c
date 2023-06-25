@@ -12,8 +12,7 @@ int main(int argc, char **argv)
 	char line[MAX_LINE_LENGTH];
 	unsigned int line_number = 1;
 	stack_t *stack = NULL;
-	char *opcode;
-	char *argument;
+	char *opcode, *argument;
 
 	if (argc != 2)
 		usageError();
@@ -26,23 +25,21 @@ int main(int argc, char **argv)
 		opcode = strtok(line, " ");
 		argument = strtok(NULL, " ");
 		fflush(stdout);
-		if (opcode != NULL && *opcode != '\0')
+		if (opcode != NULL && *opcode != '\0' && opcode[0] != '#')
 		{
 			void (*op_func)(stack_t **, unsigned int, char *);
-
+			
 			op_func = get_op_func(opcode);
 			if (op_func != NULL)
 				op_func(&stack, line_number, argument);
 			else
 				opcodeError(line_number, opcode);
 		}
-		else if (opcode == NULL)
+		else /*if (opcode == NULL || opcode[0] == '#')*/
 		{
 			line_number++;
 			continue;
 		}
-		else
-			opcodeError(line_number, opcode);
 		line_number++;
 	}
 	free_stack(&stack);
