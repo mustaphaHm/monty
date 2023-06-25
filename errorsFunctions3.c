@@ -29,3 +29,13 @@ void mul_error(unsigned int line_number)
 	fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 	exit(EXIT_FAILURE);
 }
+/**
+ * mod_error - prints error can't mod stack too short
+ * @line_number: line number
+ * Return: nothing
+ */
+void mod_error(unsigned int line_number)
+{
+	fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
+	exit(EXIT_FAILURE);
+}

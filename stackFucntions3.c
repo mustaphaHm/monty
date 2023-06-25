@@ -80,3 +80,33 @@ void mul(stack_t **stack, unsigned int line_number, char *n)
 	else
 		mul_error(line_number);
 }
+/**
+ * mod - function that computes the rest of teh division 
+ * @stack: pointer to pointer of the first elemnt of the stack
+ * @line_number: the line number
+ * @n: data of teh node
+ */
+void mod(stack_t **stack, unsigned int line_number, char *n)
+{
+	stack_t *top, *next;
+	int mod;
+	(void) n;
+
+	if (*stack != NULL && (*stack)->next != NULL)
+	{
+		top = *stack;
+		next = (*stack)->next;
+		if (top->n == 0)
+			div_error_zero(line_number);
+		else
+			mod = next->n % top->n;
+
+		next->n = mod;
+		next = (*stack)->next;
+		*stack = next;
+		next->prev = NULL;
+		free(top);
+	}
+	else
+		mod_error(line_number);
+}

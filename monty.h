@@ -61,4 +61,6 @@ void div_error_short(unsigned int line_number);
 void div_error_zero(unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number, char *n);
 void mul_error(unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number, char *n);
+void mod_error(unsigned int line_number);
 #endif
